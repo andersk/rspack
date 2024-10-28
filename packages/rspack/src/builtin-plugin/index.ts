@@ -59,6 +59,7 @@ export * from "./SourceMapDevToolPlugin";
 export * from "./SplitChunksPlugin";
 export * from "./LightningCssMinimizerRspackPlugin";
 export * from "./SwcJsMinimizerPlugin";
+export * from "./swc-dts-emit/index";
 export * from "./WarnCaseSensitiveModulesPlugin";
 export * from "./WebWorkerTemplatePlugin";
 export * from "./WorkerPlugin";
