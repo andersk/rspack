@@ -69,7 +69,7 @@ ustr               = { package = "ustr-fxhash", version = "1.0.0" }
 xxhash-rust        = { version = "0.8.10" }
 
 # Pinned
-napi        = { package = "napi-h", version = "=2.16.1" }
+napi        = { git = "https://github.com/hardfist/napi-rs", branch = "yj/cpu3" }
 napi-build  = { version = "2" }
 napi-derive = { version = "2" }
 

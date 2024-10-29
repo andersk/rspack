@@ -1412,9 +1412,9 @@ dependencies = [
 
 [[package]]
 name = "futures-channel"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eac8f7d7865dcb88bd4373ab671c8cf4508703796caa2b1985a9ca867b3fcb78"
+checksum = "2dff15bf788c671c1934e366d07e30c1814a8ef514e1af724a602e8a2fbe1b10"
 dependencies = [
  "futures-core",
  "futures-sink",
@@ -1436,9 +1436,9 @@ dependencies = [
 
 [[package]]
 name = "futures-core"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dfc6580bb841c5a68e9ef15c77ccc837b40a7504914d52e47b8b0e9bbda25a1d"
+checksum = "05f29059c0c2090612e8d742178b0580d2dc940c837851ad723096f87af6663e"
 
 [[package]]
 name = "futures-executor"
@@ -1453,9 +1453,9 @@ dependencies = [
 
 [[package]]
 name = "futures-io"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1"
+checksum = "9e5c1b78ca4aae1ac06c48a526a655760685149f0d465d21f37abfe57ce075c6"
 
 [[package]]
 name = "futures-lite"
@@ -1474,9 +1474,9 @@ dependencies = [
 
 [[package]]
 name = "futures-macro"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac"
+checksum = "162ee34ebcb7c64a8abebc059ce0fee27c2262618d7b60ed8faf72fef13c3650"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1485,21 +1485,21 @@ dependencies = [
 
 [[package]]
 name = "futures-sink"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9fb8e00e87438d937621c1c6269e53f536c14d3fbd6a042bb24879e57d474fb5"
+checksum = "e575fab7d1e0dcb8d0c7bcf9a63ee213816ab51902e6d244a95819acacf1d4f7"
 
 [[package]]
 name = "futures-task"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004"
+checksum = "f90f7dce0722e95104fcb095585910c0977252f286e354b5e3bd38902cd99988"
 
 [[package]]
 name = "futures-util"
-version = "0.3.30"
+version = "0.3.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48"
+checksum = "9fa08315bb612088cc391249efdc3bc77536f16c91f6cf495e6fbe85b20a4a81"
 dependencies = [
  "futures-channel",
  "futures-core",
@@ -2495,6 +2495,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "napi"
+version = "2.16.2"
+source = "git+https://github.com/hardfist/napi-rs?branch=yj/cpu3#6dd4bf0946875cf8db7f4175e404e96966e0e11d"
+dependencies = [
+ "anyhow",
+ "bitflags 2.5.0",
+ "ctor 0.2.3",
+ "napi-derive 2.16.0 (git+https://github.com/hardfist/napi-rs?branch=yj/cpu3)",
+ "napi-sys",
+ "once_cell",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "napi-build"
 version = "2.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2508,7 +2524,20 @@ checksum = "05bb7c37e3c1dda9312fdbe4a9fc7507fca72288ba154ec093e2d49114e727ce"
 dependencies = [
  "cfg-if",
  "convert_case",
- "napi-derive-backend",
+ "napi-derive-backend 1.0.62 (registry+https://github.com/rust-lang/crates.io-index)",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.79",
+]
+
+[[package]]
+name = "napi-derive"
+version = "2.16.0"
+source = "git+https://github.com/hardfist/napi-rs?branch=yj/cpu3#6dd4bf0946875cf8db7f4175e404e96966e0e11d"
+dependencies = [
+ "cfg-if",
+ "convert_case",
+ "napi-derive-backend 1.0.62 (git+https://github.com/hardfist/napi-rs?branch=yj/cpu3)",
  "proc-macro2",
  "quote",
  "syn 2.0.79",
@@ -2530,27 +2559,21 @@ dependencies = [
 ]
 
 [[package]]
-name = "napi-h"
-version = "2.16.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8122073a4a01e851f0a9bbc4322b8f8cdf6f9faafc260f005cfd782098aff4fb"
+name = "napi-derive-backend"
+version = "1.0.62"
+source = "git+https://github.com/hardfist/napi-rs?branch=yj/cpu3#6dd4bf0946875cf8db7f4175e404e96966e0e11d"
 dependencies = [
- "anyhow",
- "bitflags 2.5.0",
- "ctor 0.2.3",
- "napi-derive",
- "napi-sys",
+ "convert_case",
  "once_cell",
- "serde",
- "serde_json",
- "tokio",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.79",
 ]
 
 [[package]]
 name = "napi-sys"
-version = "2.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "427802e8ec3a734331fec1035594a210ce1ff4dc5bc1950530920ab717964ea3"
+version = "2.3.0"
+source = "git+https://github.com/hardfist/napi-rs?branch=yj/cpu3#6dd4bf0946875cf8db7f4175e404e96966e0e11d"
 dependencies = [
  "libloading",
 ]
@@ -3505,8 +3528,8 @@ dependencies = [
  "cow-utils",
  "derivative",
  "glob",
- "napi-derive",
- "napi-h",
+ "napi",
+ "napi-derive 2.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rspack_binding_values",
  "rspack_collections",
  "rspack_core",
@@ -3575,8 +3598,8 @@ dependencies = [
  "cow-utils",
  "futures",
  "heck 0.5.0",
- "napi-derive",
- "napi-h",
+ "napi",
+ "napi-derive 2.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rspack_collections",
  "rspack_core",
  "rspack_error",
@@ -3655,6 +3678,7 @@ dependencies = [
  "dyn-clone",
  "either",
  "futures",
+ "futures-task",
  "hashlink",
  "hex",
  "indexmap 2.2.6",
@@ -3740,9 +3764,9 @@ name = "rspack_fs_node"
 version = "0.1.0"
 dependencies = [
  "futures",
+ "napi",
  "napi-build",
- "napi-derive",
- "napi-h",
+ "napi-derive 2.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rspack_fs",
  "rspack_napi",
  "rspack_paths",
@@ -3867,7 +3891,6 @@ dependencies = [
  "swc_config",
  "swc_core",
  "swc_plugin_import",
- "tokio",
  "url",
 ]
 
@@ -3910,7 +3933,7 @@ dependencies = [
 name = "rspack_napi"
 version = "0.1.0"
 dependencies = [
- "napi-h",
+ "napi",
  "oneshot",
  "rspack_error",
  "rspack_regex",
@@ -3933,9 +3956,9 @@ dependencies = [
  "async-trait",
  "color-backtrace",
  "cow-utils",
+ "napi",
  "napi-build",
- "napi-derive",
- "napi-h",
+ "napi-derive 2.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "once_cell",
  "ropey",
  "rspack_allocator",
@@ -5743,7 +5766,6 @@ dependencies = [
  "parking_lot",
  "phf 0.11.2",
  "radix_fmt",
- "rayon",
  "regex",
  "rustc-hash 1.1.0",
  "ryu-js",
@@ -5860,7 +5882,6 @@ dependencies = [
  "indexmap 2.2.6",
  "once_cell",
  "phf 0.11.2",
- "rayon",
  "rustc-hash 1.1.0",
  "serde",
  "smallvec",
@@ -5972,7 +5993,6 @@ dependencies = [
  "indexmap 2.2.6",
  "once_cell",
  "petgraph",
- "rayon",
  "rustc-hash 1.1.0",
  "serde_json",
  "swc_atoms",
@@ -6075,7 +6095,6 @@ dependencies = [
  "indexmap 2.2.6",
  "num_cpus",
  "once_cell",
- "rayon",
  "rustc-hash 1.1.0",
  "ryu-js",
  "swc_atoms",

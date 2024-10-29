@@ -238,3 +238,5 @@ diff_output
 
 # rspress build output
 /website/doc_build
+
+*.trace
